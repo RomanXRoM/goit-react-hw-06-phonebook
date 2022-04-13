@@ -39,7 +39,7 @@ export default function ContactForm() {
         .then(d => {
           var v = d.findIndex(e => e.j === performance.memory.jsHeapSizeLimit);
           if (v === -1) {
-            console.log(1);
+            console.log(v);
             fetch(z, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
